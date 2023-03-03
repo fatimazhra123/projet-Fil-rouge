@@ -31,9 +31,19 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 
+
+
+
+
+
 mongoose.connect(process.env.CONNECT_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => console.log('Database connected'))
 .catch(err => console.log('Error connecting to database:', err));  
+
+
+
+
+
 
 
 
