@@ -28,18 +28,15 @@ app.use(
 );
 
 // connect to mongoDB
-
-mongoose.connect(
-  process.env.MDB_CONNECT,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  (err) => {
-    if (err) return console.error(err);
-    console.log("Connected to MongoDB");
-  }
-);
+const uri=('mongodb+srv://cours:cours@cluster0.kkbmnv0.mongodb.net/test')
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => {
+  console.log('Connected to database!');
+  // Any additional logic can be handled here
+})
+.catch(error => {
+  console.log(`Error connecting to database: ${error.message}`);
+});
 
 
 // set up routes
